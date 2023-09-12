@@ -61,17 +61,22 @@ h6 {
     --text-grey: #878787;
     --accent-green: #B8DB15;
     --accent-yellow: #F4C911;
+    --accent-white: #FFFFFF;
 }
 
 /* Page */
-main {
+body {
     background: transparent linear-gradient(180deg, #F1F6FB 0%, #F1F6FBF1 50%, #F1F6FB00 100%) 0% 0% no-repeat padding-box;
-    width: 100vw;
+}
+main {
+    max-width: 1920px;
     height: 100vh;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 75px;
     font-family: 'Poppins', sans-serif;
 
     > h2 {
@@ -92,14 +97,61 @@ main {
     }
 
     .cards {
-        display: flex;
+        width: 63.5%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        justify-content: center;
+        margin-top: 5px;
 
         .card {
+            background-color: var(--accent-white);
+            .img {
 
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+
+                > h3 {
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: var(--text-violet);
+                }
+
+                > p {
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: var(--text-grey);
+                    margin-top: 10px;
+                }
+
+                > button {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: var(--text-violet);
+                    text-transform: uppercase;
+                    width: fit-content;
+                    padding: 10px 30px;
+                    background-color: var(--accent-yellow);
+                    border: none;
+                    border-radius: 33px;
+                }
+            }
         }
     }
 
     > button {
-        font-size: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-violet);
+        text-transform: uppercase;
+        padding: 20px 40px;
+        background-color: var(--accent-yellow);
+        border: none;
+        border-radius: 33px;
     }
 }
