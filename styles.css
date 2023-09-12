@@ -57,101 +57,107 @@ h6 {
 
 /* Main CSS */
 :root {
-    --text-violet: #472E8D;
-    --text-grey: #878787;
-    --accent-green: #B8DB15;
-    --accent-yellow: #F4C911;
-    --accent-white: #FFFFFF;
+  --text-violet: #472e8d;
+  --text-grey: #878787;
+  --accent-green: #b8db15;
+  --accent-yellow: #f4c911;
+  --accent-white: #ffffff;
 }
 
 /* Page */
+/* Centering content on page */
 body {
-    background: transparent linear-gradient(180deg, #F1F6FB 0%, #F1F6FBF1 50%, #F1F6FB00 100%) 0% 0% no-repeat padding-box;
-}
-main {
+  background: transparent
+    linear-gradient(180deg, #f1f6fb 0%, #f1f6fbf1 50%, #f1f6fb00 100%) 0% 0%
+    no-repeat padding-box;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+
+  > main {
     max-width: 1920px;
-    height: 100vh;
-    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-block: 100px;
     gap: 75px;
-    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
 
     > h2 {
-        font: 60px/77px 'Fira Sans Extra Condensed', sans-serif;
-        color: var(--text-violet);
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 29px;
+      font: 60px/77px "Fira Sans Extra Condensed", sans-serif;
+      color: var(--text-violet);
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 29px;
 
-        &::after {
-            content: "";
-            width: 50%;
-            height: 5px;
-            background-color: var(--accent-green);
-        }
+      &::after {
+        content: "";
+        width: 50%;
+        height: 5px;
+        background-color: var(--accent-green);
+      }
     }
 
     .cards {
-        width: 63.5%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        justify-content: center;
-        margin-top: 5px;
+      display: grid;
+      grid-template-columns: repeat(3, clamp(300px, 25%, 407px));
+      gap: 30px;
+      justify-content: center;
+      margin-top: 5px;
 
-        .card {
-            background-color: var(--accent-white);
-            .img {
+      .card {
+        background-color: var(--accent-white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-            }
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding: 30px;
 
-            .content {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                padding: 30px;
+          > h3 {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--text-violet);
+          }
 
-                > h3 {
-                    font-size: 30px;
-                    font-weight: 600;
-                    color: var(--text-violet);
-                }
+          > p {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-grey);
+            margin-top: 10px;
+          }
 
-                > p {
-                    font-size: 16px;
-                    font-weight: 300;
-                    color: var(--text-grey);
-                    margin-top: 10px;
-                }
-
-                > button {
-                    font-size: 14px;
-                    font-weight: 500;
-                    color: var(--text-violet);
-                    text-transform: uppercase;
-                    width: fit-content;
-                    padding: 10px 30px;
-                    background-color: var(--accent-yellow);
-                    border: none;
-                    border-radius: 33px;
-                }
-            }
+          > button {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-violet);
+            text-transform: uppercase;
+            width: fit-content;
+            padding: 10px 30px;
+            background-color: var(--accent-yellow);
+            border: none;
+            border-radius: 33px;
+          }
         }
+      }
     }
 
     > button {
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--text-violet);
-        text-transform: uppercase;
-        padding: 20px 40px;
-        background-color: var(--accent-yellow);
-        border: none;
-        border-radius: 33px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-violet);
+      text-transform: uppercase;
+      padding: 20px 40px;
+      background-color: var(--accent-yellow);
+      border: none;
+      border-radius: 33px;
     }
+  }
 }
