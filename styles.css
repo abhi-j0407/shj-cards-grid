@@ -1,0 +1,105 @@
+/* CSS Resets */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Main CSS */
+:root {
+    --text-violet: #472E8D;
+    --text-grey: #878787;
+    --accent-green: #B8DB15;
+    --accent-yellow: #F4C911;
+}
+
+/* Page */
+main {
+    background: transparent linear-gradient(180deg, #F1F6FB 0%, #F1F6FBF1 50%, #F1F6FB00 100%) 0% 0% no-repeat padding-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+    > h2 {
+        font: 60px/77px 'Fira Sans Extra Condensed', sans-serif;
+        color: var(--text-violet);
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 29px;
+
+        &::after {
+            content: "";
+            width: 50%;
+            height: 5px;
+            background-color: var(--accent-green);
+        }
+    }
+
+    .cards {
+        display: flex;
+
+        .card {
+
+        }
+    }
+
+    > button {
+        font-size: 50px;
+    }
+}
