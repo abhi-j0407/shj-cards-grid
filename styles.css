@@ -120,6 +120,8 @@ body {
 
           > img {
             height: 100%;
+            width: 100%;
+            object-fit: cover;
           }
         }
 
@@ -166,6 +168,60 @@ body {
       background-color: var(--accent-yellow);
       border: none;
       border-radius: 33px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    > main {
+      > h2 {
+
+        &::after {
+          width: 55%;
+        }
+      }
+      .cards {
+        grid-template-columns: 556px;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    > main {
+      > h2 {
+        font: 50px/64px "Fira Sans Extra Condensed", sans-serif;
+
+        &::after {
+          width: 75%;
+        }
+      }
+      .cards {
+        grid-template-columns: 1fr;
+        margin-inline: 20px;
+
+        .card {
+          max-width: 335px;
+
+          .img {
+            height: 242px;
+          }
+
+          .content {
+            > h3 {
+              font-size: 23px;
+            }
+          }
+        }
+      }
+
+      > button {
+        font-size: 16px;
+        padding: 15px 30px;
+      }
     }
   }
 }
